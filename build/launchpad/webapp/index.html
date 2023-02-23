@@ -28,7 +28,7 @@
                     return Controller.extend("PreviewController", {
                         onInit: function () {
 
-                            const data = {"Services":[{"ServiceName":"crystalcicdtesting02Service","DetailsURL":"./service/crystalcicdtesting02/","Metadata":"./service/crystalcicdtesting02/$metadata","Entities":[{"Name":"SrvBooks","URL":"./service/crystalcicdtesting02/SrvBooks","FioriURL":""}],"EntitiesCount":1}]}
+                            const data = {"Services":[{"ServiceName":"crystalcicdtesting02Service","DetailsURL":"./service/crystalcicdtesting02/","Metadata":"./service/crystalcicdtesting02/$metadata","Entities":[{"Name":"SrvBooks","URL":"./service/crystalcicdtesting02/SrvBooks","FioriURL":""},{"Name":"SrvAuthors","URL":"./service/crystalcicdtesting02/SrvAuthors","FioriURL":""}],"EntitiesCount":2}]}
                             this.getView().setModel(new JSONModel(data));
                         }
                     });

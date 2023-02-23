@@ -7,6 +7,9 @@ service crystalcicdtesting02Service
 {
     entity SrvBooks as
         projection on my.Books;
+
+    entity SrvAuthors as
+        projection on my.Authors;
 }
 
 annotate crystalcicdtesting02Service with @requires :
