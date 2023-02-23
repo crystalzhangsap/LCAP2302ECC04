@@ -1,0 +1,9 @@
+{
+    "DestinationName": "../service/crystalcicdtesting02/",
+    "OfflineEnabled": false,
+    "LanguageURLParam": "",
+    "OnlineOptions": {},
+    "PathSuffix": "",
+    "SourceType": "Cloud",
+    "ServiceUrl":""
+}

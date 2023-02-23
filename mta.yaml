@@ -22,6 +22,22 @@ build-parameters:
         - bash -c "export PATH=$PATH:$(pwd)/node_modules/.bin"
         - cds build --production
 modules:
+  - name: crystalcicdtesting02-MDKUIAPP
+    type: html5
+    path: app/MDKUIAPP
+    build-parameters:
+      builder: custom
+      commands:
+        - npx -p @sap/mdk-tools mdk build --target module --ui5 --forceUpdate
+        - bash -c "cd Web/MDKModule && rm -rf .npmrc && npm install"
+        - bash -c "cd Web/MDKModule && npm run build"
+        - >-
+          bash -c "mv Web/MDKModule/MDKModule-content.zip
+          ../../build/dist/MDKUIAPP.zip"
+        - rm -rf Web/MDKModule/dist
+      _artifactName: MDKUIAPP.zip
+      supported-platforms: []
+      build-result: ../../build/dist
   - name: crystalcicdtesting02-crystalcicdtesting02.FioriAPP
     type: html5
     path: app/crystalcicdtesting02.FioriAPP
@@ -133,6 +149,10 @@ modules:
     build-parameters:
       build-result: resources
       requires:
+        - name: crystalcicdtesting02-MDKUIAPP
+          artifacts:
+            - MDKUIAPP.zip
+          target-path: resources
         - name: crystalcicdtesting02-crystalcicdtesting02.FioriAPP
           artifacts:
             - crystalcicdtesting02FioriAPP.zip

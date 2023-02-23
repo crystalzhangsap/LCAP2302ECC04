@@ -1,0 +1,10 @@
+{
+    "Service": "/MDKUIAPP/Services/service1.service",
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "OnSuccess": "/MDKUIAPP/Actions/Service/InitializeOnlineSuccessMessage.action",
+    "OnFailure": "/MDKUIAPP/Actions/Service/InitializeOnlineFailureMessage.action",
+    "ActionResult": {
+        "_Name": "init"
+    }
+}
